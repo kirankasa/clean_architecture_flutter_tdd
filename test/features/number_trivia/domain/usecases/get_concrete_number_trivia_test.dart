@@ -20,12 +20,12 @@ void main() {
   final tNumber = 1;
   final tNumberTrivia = NumberTrivia(text: "Testing", number: 1);
   test("should get trivia for number from repository", () async {
-    when(mockNumberTriviaRepository.getConcreteReturnTrivia(any))
+    when(mockNumberTriviaRepository.getConcreteNumberTrivia(any))
         .thenAnswer((_) async => Right(tNumberTrivia));
 
     final result = await useCase(Params(number: tNumber));
     expect(result, Right(tNumberTrivia));
-    verify(mockNumberTriviaRepository.getConcreteReturnTrivia(tNumber));
+    verify(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber));
     verifyNoMoreInteractions(mockNumberTriviaRepository);
   });
 }
