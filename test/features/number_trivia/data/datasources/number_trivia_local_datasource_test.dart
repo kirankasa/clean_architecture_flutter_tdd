@@ -37,7 +37,7 @@ void main() {
     test("should throw a CacheException when there is no cached data", () {
       when(mockSharedPreferences.getString(any)).thenReturn(null);
       final call = numberTriviaLocalDataSource.getLastNumberTrivia;
-      expect(() => call(), throwsA(isInstanceOf<CacheException>()));
+      expect(() => call(), throwsA(isA<CacheException>()));
     });
   });
 
