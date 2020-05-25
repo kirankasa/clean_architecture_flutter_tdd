@@ -9,7 +9,7 @@ import 'package:meta/meta.dart';
 class GetConcreteNumberTrivia implements UseCase<NumberTrivia, Params> {
   final NumberTriviaRepository numberTriviaRepository;
 
-  GetConcreteNumberTrivia(this.numberTriviaRepository);
+  GetConcreteNumberTrivia({@required this.numberTriviaRepository});
 
   @override
   Future<Either<Failure, NumberTrivia>> call(Params params) async {

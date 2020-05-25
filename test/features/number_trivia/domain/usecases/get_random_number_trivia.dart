@@ -15,7 +15,8 @@ void main() {
 
   setUp(() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
-    useCase = GetRandomNumberTrivia(mockNumberTriviaRepository);
+    useCase = GetRandomNumberTrivia(
+        numberTriviaRepository: mockNumberTriviaRepository);
   });
 
   final tNumberTrivia = NumberTrivia(text: "Testing", number: 1);

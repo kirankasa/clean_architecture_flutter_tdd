@@ -14,7 +14,8 @@ void main() {
 
   setUp(() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
-    useCase = GetConcreteNumberTrivia(mockNumberTriviaRepository);
+    useCase = GetConcreteNumberTrivia(
+        numberTriviaRepository: mockNumberTriviaRepository);
   });
 
   final tNumber = 1;
